@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="ICT-banner-section">
+        <div class="ICT-overlay"></div>
+        <header class="nav-bar">
+            <div><img id="logo" src="/front_end/Images/PastieWebLogo.png" alt="logo"></div>
+            <div class="search-container">
+                <input type="text" placeholder="Search...." class="search-input">
+            </div>
+            <div class="nav">
+                <a href="">Home</a>
+                <div class="dropdown">
+                    <a href="" class="dropdown-btn">Departments</a>
+                    <ul class="dropdown-content">
+                        <li><a href="">ICT</a></li>
+                        <li><a href="">Business</a></li>
+                        <li><a href="">Engineering</a></li>
+                    </ul>
+                </div>
+                <a href="">About us</a>
+                <a href="">Contact</a>
+                <a href="">Admin-Login</a>
+            </div>
+        </header>
+        <h2> Intro to IT Past Papers </h2>
+        <h3>for the year 2000</h3>
+    </section>
+    
+    <!-- <main class="download-course-section">
+
+        <div class="download-course">
+            <a href="">Intro to IT June Sessional Exams </a>
+            <button>[Delete]</button>
+        </div >
+        <div id="prog-bg-color" class="download-course">
+            <a href="">June Assignment (Abbreviations) </a>
+            <button>[Delete]</button>
+        </div>
+        <div class="download-course">
+            <a href="">Intro to IT December Sessional Exams  </a>
+            <button>[Delete]</button>
+        </div>
+        <div id="prog-bg-color" class="download-course">
+            <a href="">Semester one Test 1  </a>
+            <button>[Delete]</button>
+        </div>
+        <div class="download-course">
+            <a href="">Semester two Test 2  </a>
+            <button>[Delete]</button>
+        </div>
+        <div id="prog-bg-color" class="download-course">
+            <a href="">Intro to IT June Sessional Exams </a>
+            <button>[Delete]</button>
+        </div >
+        <div class="download-course">
+            <a href="">June Assignment (Abbreviations) </a>
+            <button>[Delete]</button>
+        </div>
+        <div id="prog-bg-color" class="download-course">
+            <a href="">Intro to IT December Sessional Exams  </a>
+            <button>[Delete]</button>
+        </div>
+        <div class="download-course">
+            <a href="">Semester one Test 1  </a>
+            <button>[Delete]</button>
+        </div>
+        <div id="prog-bg-color" class="download-course">
+            <a href="">Semester two Test 2  </a>
+            <button>[Delete]</button>
+        </div>
+
+    </main> -->
+
+    <button type="button" id="openUploadModal" class="upload-btn">Upload Paper</button>
+    <div id="uploadModal" class="upload-modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Upload New Past Paper</h2>
+        <form action="upload.php" method="POST" enctype="multipart/form-data" class="upload-form">
+            <div class="form-group">
+                <label for="paperTitle">Paper Title:</label>
+                <input type="text" id="paperTitle" name="paperTitle" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="courseYear">Year:</label>
+                <input type="number" id="courseYear" name="courseYear" min="2000" max="<?= date('Y') ?>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="semester">Semester:</label>
+                <select id="semester" name="semester" required>
+                    <option value="June Sessional">June Sessional</option>
+                    <option value="December Sessional">December Sessional</option>
+                    <option value="Semester 1">Semester 1</option>
+                    <option value="Semester 2">Semester 2</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="pdfFile">PDF File:</label>
+                <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+            </div>
+            
+            <button type="submit" class="upload-submit-btn">Upload Paper</button>
+        </form>
+    </div>
+    </div>
+
+    
+        <footer>
+        <!-- This is the footer section containing the logo, vav and socials -->
+        <section class="footer-first-section">
+            <div>
+                <img id="logo" src="/front_end/Images/PastieWebLogo.png" alt="logo">
+            </div>
+            <div id="footer-nav">
+                <a href="">Home</a>
+                <a href="">Departments</a>
+                <a href="">About us</a>
+                <a href="">Contact</a>
+                <a href="">Admin-Login</a>
+            </div>
+            <div id="footer-socials">
+                <a href="">Email: pastie34@gmail.com</a>
+                <a href="">Phone: +260 760079407</a>
+                <a href="">Address: Main Campus, Ndola Zm</a>
+            </div>
+        </section>
+        <hr>
+        <section class="footer-second-section">
+            <h5>Copyright Pastie.com. All Rights Reserved 2024</h5>
+        </section>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,702 @@
+:root {
+    --body-bg: #EDEFF6;
+    --primary-font-color: #052A60;
+    --secodary-color: #DF9029;
+    --faint-yellow: #fad29e;
+    --nav-bar-fontsize: 150%;
+    --hover-year-font-size: 170%;
+    --medium-font-size: 180%;
+    --border-radius: 15px;
+    --large-font-size: 300%;
+    --larger-font-size: 400%;
+}
+
+body {
+    background-color: var(--body-bg);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Removing browser default space */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.nav-bar {
+    position: relative;
+    gap: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: var(--nav-bar-fontsize);
+    margin-top: 2%;
+    z-index: 3;
+}
+
+/* Dropdown-menu styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-left: 4%;
+}
+
+.dropdown-btn {
+    display: inline-flex;
+    align-items: center;
+}
+.dropdown-btn::after {
+    content: " ▼";
+    margin: 0;
+    font-size: 0.8em;
+    padding-top: 3%;
+    padding-left: 4%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 190px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 6%;;
+    top: 100%;
+    left: 0;
+    margin-left: 2px;
+}
+
+.dropdown-content li a  {
+    color: var(--primary-font-color);
+    padding: 6px;
+    display: block;
+    font-weight: bold;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    color: red;
+}
+
+.banner-container {
+    position: relative;
+    background-image: url("/front_end/Images/Banner.jpg");
+    height: 800px;
+    margin-top: 2%;
+    padding-top: 1%;
+    background-size: cover;
+    /*background-position: center;*/
+    
+}
+
+.search-container {
+    margin-right: 2%;
+}
+.search-input {
+    width: 200%;
+    height: 30px;
+    background-color: rgba(245, 237, 237, 0.0);
+    border: 3px solid #fff;
+    border-radius: var(--border-radius);
+    font-size: 60%;
+    color: #fff;
+}
+
+/* THIS IS THE NAVIGATION BAR */
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 4%;
+}
+.nav a:hover {
+    color: var(--secodary-color);
+}
+
+.nav {
+    width: 40%;
+    z-index: 10;
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgba(0,0,0,0.75);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+#logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.banner-content {
+    position: absolute;
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+    justify-items: center;
+    width: 70%;
+    z-index: 2;
+    height: 50%;
+    margin-left: 16%;
+    margin-top:5%;
+    color: #fff;
+
+}
+.banner-image {
+    background-image: url("/front_end/Images/Engineering.jpg");
+    background-size: cover;
+    width: 70%;
+    height: auto;
+    margin-left: 0;
+    margin-top: 1.5%;
+}
+
+#welcome-deptm {
+    font-size: var(--large-font-size);
+    font-weight: bold;
+}
+
+.banner-download-txt {
+    font-size: var(--nav-bar-fontsize);
+    margin-top: 4%;
+}
+
+/* Explore button */
+.explore-btn {
+    position: absolute; 
+    font-size: var(--nav-bar-fontsize);
+    margin-top: 4%;
+    background-color: var(--secodary-color);
+    width: 10%;
+    padding: 2%;
+    border-radius: var(--border-radius);
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.explore-btn:hover {
+    background-color: var(--primary-font-color);
+}
+
+/* Motivational section styling */
+.get-motivated {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+}
+#Motivation {
+    font-size: var(--large-font-size);
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary-font-color);
+    margin-bottom: 1%;
+    /* width: 100%; */
+}
+
+/* Motivational Quotes Section */
+#motivational-quote {
+    font-size: var(--nav-bar-fontsize);
+    text-align: center;
+    color: #000;
+    width: 72%;
+    background-color: #fff;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Department Section */
+.department-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 400px;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    margin: 0;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: var(--medium-font-size);
+    color: var(--primary-font-color);
+    margin: 20px;
+}
+
+.card p {
+    font-size: var(--nav-bar-fontsize);
+    margin: 20px;
+}
+
+.card button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--secodary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--nav-bar-fontsize);
+    margin: 20px;
+}
+
+.card button:hover {
+    background-color: var(--primary-font-color);
+}
+
+/* Enjoy-Benefits */
+.card2 {
+    width: 100%;
+    background-color: var(--primary-font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 4%;
+    margin-bottom: 4%;
+    /* background: radial-gradient(circle, #6872c4, var(--primary-font-color)); */
+    background: linear-gradient(to top, #6e7ad8, var(--primary-font-color));
+}
+
+.enjoy-benefits {
+    display: flex;
+    color: white;
+    gap: 40px;
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+#enjoy-benefits {
+    padding-right: 4%;
+    width: 35%;
+    margin: 0;
+}
+
+#enjoy-benefits h2 {
+    font-size: var(--larger-font-size);
+    margin-top: 2%;
+    padding-left: 4%;
+}
+
+#enjoy-benefits h4 {
+    font-size: var(--nav-bar-fontsize);
+    font-weight: lighter;
+    color: var(--secodary-color);
+    padding-left: 4%;
+}
+
+#card2-explore-text {
+    font-size: var(--nav-bar-fontsize);
+    width: 30%;
+    padding-left: 4%;
+    padding-top: 2%;;
+    margin: 0;
+}
+
+/* Plain Pic Section Styling */
+
+.pic-card-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card-pic {
+    overflow: hidden;
+    width: 400px;
+    border-radius: var(--border-radius);
+}
+
+.card-pic img {
+    background-size: cover;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+}
+
+/* Foot-section */
+footer {
+    padding-top: 2%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+/* This is the footer section containing the logo, vav and socials */
+.footer-first-section {
+    display: flex;
+    justify-content: center;
+    gap: 24%;
+}
+
+#footer-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 4%;
+
+}
+
+#footer-socials {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-socials a {
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 4%;
+}
+
+footer hr {
+    border-color: #fff;
+    width: 75%;
+    margin-top: 2%;
+}
+
+.footer-second-section h5 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-weight: lighter;
+}
+
+#footer-nav a:hover {
+    color: red;
+}
+
+#footer-socials a:hover {
+    color: red;
+}
+
+
+/* ICT DEPARTMENT STYLING */
+ .ICT-banner-section {
+    background-image: url("/front_end/Images/IT2.jpg");
+    margin-top: 2%;
+    padding-top: 1%;
+    height: 390px;
+    background-size: cover;
+ }
+
+ .ICT-overlay {
+    position: absolute;
+    background-color: rgba(0,0,0,0.75);
+    top: 0;
+    left: 0;
+    height: 47%;
+    width: 100%;
+    z-index: 1;
+    margin-top: 2%;
+ }
+
+
+  .ICT-banner-section h2 {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    font-size: var(--larger-font-size);
+    margin-bottom: 0;
+  }
+
+
+  /* Main Section containing Programs of Study */
+
+  .programs {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-left: 9%;
+    gap: 25%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+  }
+
+.prog-section {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+  }
+
+.prog-section h2 {
+    font-size: var(--medium-font-size);
+    background-color: #ffffff;
+    color: var(--primary-font-color);
+    padding: 1%;
+    width: 149%;
+    margin: 0;
+    margin-bottom: 8%;
+  }
+.program-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #7a7a7a;
+    width: 150%;
+}
+
+.program-list h3 {
+    padding: 1%;
+    font-size: var(--nav-bar-fontsize);
+    margin: 0;
+    color: var(--primary-font-color);
+}
+.program-list a {
+    text-decoration: none;
+    color: var(--primary-font-color);
+    font-size: var(--nav-bar-fontsize);
+    padding: 1%;
+}
+.program-list a:hover {
+    font-weight: bold;
+
+}
+.prog-bg-color {
+    background-color: var(--faint-yellow);
+}
+
+.msg-section {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    margin-bottom: 2%;
+    padding: 4%;
+    width: 20%;
+}
+
+.msg-section h4 {
+    font-size: var(--nav-bar-fontsize);
+    font-weight: bold;
+    color: var(--primary-font-color);
+}
+
+/* Course Dropdown Styling (years) */
+.course-dropdown h3 {
+    font-size: var (--nav-bar-fontsize);
+    font-weight: light;
+    display: flex;
+    cursor: pointer;
+}
+.course-dropdown h3::after {
+    content: " ▼";
+    padding-left: 8%;
+    font-size: 0.8em;
+    padding-top: 8%;
+    margin: 0;
+}
+.course-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 65%;
+    background-color: var(--faint-yellow);
+}
+
+.course-dropdown-content {
+    background-color: #fff;
+    padding-right: 10%;
+    list-style: none;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    margin-top: 25%;
+}
+.course-dropdown-content li a:hover {
+    font-weight: bold;
+    color: var(--primary-font-color);
+    font-size: var(--hover-year-font-size);
+}
+
+.course-dropdown-content.active {
+    display: block;
+}
+
+.course-dropdown-content {
+    /* ... your existing styles ... */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none; /* Prevents interaction when hidden */
+}
+.course-dropdown-content[style*="display: block"] {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Intro to IT page Styling */
+.ICT-banner-section h3 {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: var(--nav-bar-fontsize);
+    margin-top: 0;
+}
+
+.download-course-section {
+    border: 1px solid #000;
+    align-self: center;
+    margin-left: 17%;
+    width: 65%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+}
+
+.download-course-section div {
+    display: flex;
+    gap: 30%;
+}
+
+.download-course-section div a {
+    text-decoration: none;
+    font-size: var(--nav-bar-fontsize);
+    color: var(--primary-font-color);
+    width: 100%;
+    padding-left: 1%;
+}
+.download-course-section div a:hover {
+    font-weight: bold;
+}
+
+.download-course button {
+    width: 30%;
+    font-size: var(--nav-bar-fontsize);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.download-course button:hover {
+    font-weight: bold;
+
+}
+
+.upload-btn {
+    margin-bottom: 4%;
+    margin-left:72.7%;
+    padding: 0.5%;
+    cursor: pointer;
+    color: #fff;
+    background-color: var(--primary-font-color);
+    font-size: var(--nav-bar-fontsize);
+    border: none; 
+}
+
+.upload-btn:hover {
+    background-color: var(--secodary-color);
+    color: #000;
+}
+/* .download-course {
+    border: 1px solid #000;
+} */
+
+
+/* Upload Modal Styles */
+#uploadModal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    border: 1px solid #000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+#uploadModal.active {
+    display: block;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.upload-submit-btn {
+    background-color: var(--primary-font-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.upload-submit-btn:hover {
+    background-color: var(--secodary-color);
+}
